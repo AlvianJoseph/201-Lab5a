@@ -14,7 +14,7 @@ function sum(a, b) { //eslint-disable-line
    // second element a string based on example
    var result = [];
    result[0] = a + b;
-   // result[1] = "The sum of " + a + " and " + b + " is " + result[0];
+   result[1] = "The sum of " + a + " and " + b + " is " + result[0];
    result[1] = `The sum of ${a} and ${b} is ${result[0]}.`;
    return result;
 }
@@ -36,8 +36,8 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
     var result = [];
         result[0] = a * b;
-         result[1] = `The product of ${a} and ${b} is ${result[0]}.`;
-         return result;
+        result[1] = `The product of ${a} and ${b} is ${result[0]}.`;
+        return result;
 
 }
 
@@ -60,10 +60,13 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
     var result = [];
-    result[0] = a + b + c;
-    result[1] = a * b * c;
-    result[2] = "${a} and ${b} and ${c} sum to {result[0]}.";
-    result[3] = 'The product of ${a} and ${b} and ${c} is ${result[1]}.';
+    result[0] = sum(sum(a, b)[0], c)[0];
+    result[1] = multiply(multiply(a, b)[0], c)[0];
+    result[2] = `${a} and ${b} and ${c} sum to ${result[0]}.`;
+    result[3] = `The product of ${a} and ${b} and ${c} is ${result[1]}.`;
+    console.log(result);
+    return result;
+    
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
